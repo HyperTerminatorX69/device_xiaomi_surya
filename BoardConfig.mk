@@ -18,10 +18,6 @@ BOARD_VENDOR := xiaomi
 
 DEVICE_PATH := device/xiaomi/surya
 
-ifeq ($(WITH_GMS),true)
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-endif
-
 # Inherit from proprietary files
 include vendor/xiaomi/surya/BoardConfigVendor.mk
 
@@ -95,6 +91,10 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
+KERNEL_SUPPORTS_LLVM_TOOLS := true
+TARGET_KERNEL_CLANG_VERSION := trb
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-trb
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
 TARGET_KERNEL_CONFIG := surya_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/surya
 
@@ -181,7 +181,7 @@ TARGET_SCREEN_DENSITY := 400
 
 # Sepolicy
 TARGET_SEPOLICY_DIR := msmsteppe
-include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
+include device/qcom/sepolicy_vndr/SEPolicy.mk
 
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor

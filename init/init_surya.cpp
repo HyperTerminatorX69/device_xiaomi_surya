@@ -96,13 +96,13 @@ void vendor_load_properties() {
         model = "M2007J20CI";
         name = "karna_in";
         device = "karna";
-        fingerprint = "POCO/karna_in/karna:12/RKQ1.211019.001/V13.0.2.0.SJGINXM:user/release-keys";
+        fingerprint = "google/cheetah/cheetah:13/TD1A.221105.001/9104446:user/release-keys";
         description = "karna_in-user 12 RKQ1.211019.001 V13.0.2.0.SJGINXM release-keys";
         marketname = "POCO X3";
     } else {
         name = "surya_global";
         device = "surya";
-        fingerprint = "POCO/surya_eea/surya:12/RKQ1.211019.001/V13.0.3.0.SJGEUXM:user/release-keys";
+        fingerprint = "google/cheetah/cheetah:13/TD1A.221105.001/9104446:user/release-keys";
         description = "surya_eea-user 12 RKQ1.211019.001 V13.0.3.0.SJGEUXM release-keys";
         marketname = "POCO X3 NFC";
 
